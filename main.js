@@ -1,26 +1,20 @@
-let fs = require("fs");
 let Basic = require("./BasicCard.js");
 let Cloze = require("./ClozeCard.js");
+let express = require('express');
+let path = require('path');
+let app = express();
+let fs = require("fs");
 
-const express = require('express');
-const app = express();
-app.get('/', function (req, res) {
-  fs.readFile("./index.html", null, function (error, data) {
-    if (error) {
-      res.writeHead(404);
-      res.write("File not found!");
-    } else {
-      res.write(data);
-    }
-    res.end();
-  });
-  // res.send("<h1>Hello World</h1>");
+// Define the port to run on
+app.set('port', 3000);
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Listen for requests
+let server = app.listen(app.get('port'), function() {
+  let port = server.address().port;
+  console.log('Magic happens on port ' + port);
 });
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-});
-
 
 let hi = new Basic("Question", "Answer");
 console.log(hi);
@@ -28,8 +22,9 @@ console.log(hi);
 let bye = new Cloze("George Washington was the first president of the United States", "George Washington");
 console.log(bye);
 
-// function hello(){
-// return console.log(hello);
-// }
+let tempArray = [hi,bye];
+console.log(tempArray);
 
-// module.exports = hello;
+app.get('/data',function(req, res) {
+    res.json(tempArray);
+});

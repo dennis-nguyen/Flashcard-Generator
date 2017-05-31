@@ -7,6 +7,4 @@ class ClozeCard {
     }
 }
 
-// text.split(" ").forEach(function(){});
-
 module.exports = ClozeCard;
