@@ -1,0 +1,22 @@
+{
+  "name": "flashcard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennis-nguyen/Flashcard-Generator.git"
+  },
+  "author": "dennis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dennis-nguyen/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/dennis-nguyen/Flashcard-Generator#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
