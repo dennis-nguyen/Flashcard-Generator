@@ -1,3 +1,11 @@
-# Flashcard-Generator
-# node main.js
-# localhost:3000
+Flashcard Generator
+===============
+
+### Summary
+**Flashcard Generator** was created to practice object constructors.
+
+### Technologies
+- Node.JS
+- Express
+- HTML
+- Twitter Bootstrap
